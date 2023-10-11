@@ -4,12 +4,12 @@ from pytesseract import Output
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 custom_config = r'--oem 3 --psm 6 outputbase digits'
 
-img = cv2.imread('test.png')
-camera = cv2.VideoCapture(0)
+# camera = cv2.VideoCapture(0)
 while True:
-
+    
+    img = cv2.imread('12_09_2023 15-17-17.jpg')
     # _,img=camera.read()
-    img = cv2.imread('test.png')
+    # img = cv2.imread('test.png')
     
     #ROI Coordinates
     dustx1 = 780 
@@ -52,5 +52,5 @@ while True:
         
     if cv2.waitKey(1)& 0xff == 27:
         break
-camera.release()
+# camera.release()
 cv2.destroyAllWindows()
